@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    .copyde {
+        background-color:#229ffd;
+        border:1px solid #229ffd;
+        font-size:12px;
+        height:30px;
+        line-height:30px;
+    }
+    #copycopy {
+        margin:30px;
+        color:red;
+    }
+    #copytwo {
+        width:140px;
+        height:25px;
+    }
+    #copy {
+        height:30px;
+        font-size:13px;
+    }
+    #copyhide {
+        margin-top:5px;
+        border:1px solid #229ffd;
+        width:300px;
+        height:150px;
+        background-color:white;
+    }
+</style>
+<div>
+    <div class="top">
+        <div id="copyhide">
+            <input id="copytwo" type="text" placeholder="需要复制的文本拼接" style="margin-left: 10px;width: 200px;">
+            <input type="button" value="复制" id="copy" >
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.3.1min.js"></script>
+<script>
+   $(function(){
+       //select()只能用于input和textarea ，其他的标签不能用
+       $("#copy").click(function() {
+           var Url = document.getElementById("copytwo");
+           Url.select();
+           document.execCommand("Copy");
+           alert("复制成功！");
+       });
+   })
+
+
+
+</script>
+</body>
+</html>
